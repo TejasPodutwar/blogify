@@ -1,0 +1,140 @@
+/* Repeating Code start */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: #F4F4F2;
+    list-style: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/* Title bar */
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+header h2{
+    margin: 15px 0px 10px 10px;
+    font-size: 30px;
+}
+
+header h2 a{
+    color: #495464;
+}
+
+header .auth_options, .user_data{
+    margin: 15px 10px 10px 0px;
+    color: #495464;
+    font-size: 20px;
+}
+
+.signup_link a, .login_link a, .logout_link a{
+    color: #495464;
+    font-weight: bold;
+}
+
+/* Extra: .user_greet */
+.user_greet{
+    font-weight: bolder;
+}
+
+/* Extra: .logout_link a:hover */
+.signup_link a:hover, 
+.login_link a:hover,
+.logout_link a:hover,  
+header h2 a:hover
+{
+    color: #39A2DB;
+}
+
+/* Repeating code end */
+
+
+/* Navigation bar */
+.subnav_container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sub_nav{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.subnav_label{
+    padding: 5px 10px;
+    font-size: 20px;
+    
+}
+
+.subnav_label a{
+    color: #CDD0CB ;
+    font-weight:normal;
+}
+
+/* Home Page title */
+
+.homepage-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 20px 0px;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: #39A2DB;
+}
+
+.subnav_label a:hover{
+    color:#39A2DB;
+}
+
+/* Home page blogs */
+.all-blogs{
+    margin: 20px;
+}
+
+.single-blog{
+    margin-left: 20px;
+}
+
+.blog-detail{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.blog-detail h3{
+    color: #40407a;
+    margin: 10px 0px;
+}
+
+.blog-detail::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left:0;
+    border-bottom: 2px solid #CDD0CB;
+
+}
+
+.view-btn{
+    border:1px solid #F4F4F2;
+    border-radius: 5px;
+    padding: 3px;
+    text-decoration: none;
+    background-color: #39A2DB;
+    color:#F4F4F2;
+}

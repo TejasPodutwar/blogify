@@ -1,0 +1,74 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="/details.css"> 
+</head>
+<body>
+    <header>
+        <nav>
+            <h2><a href="/">Blogify</a></h2>
+            <!-- <div class="auth_options">
+                <span class="login_link"><a href="#">Login</a></span>
+                <span style="font-weight: bolder;"> | </span>
+                <span class="signup_link"><a href="#">SignUp</a></span>
+            </div> -->
+            <div class="user_data">
+                <span class="user_greet">Welcome tejas_8501</span>
+                <span style="font-weight: bolder;"> | </span>
+                <span class="logout_link"><a href="#">Logout</a></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="subnav_container">
+        <nav class="sub_nav">
+            <span class="subnav_label">
+                <a class="subnav_link" href="/">Home</a>
+            </span>
+            <span class="subnav_label">
+                <a class="subnav_link"href="/about">About Us</a>
+            </span>
+            <span class="subnav_label">
+                <a class="subnav_link"href="/blogs/create">Create Post</a>
+            </span>
+        </nav>
+    </div>
+    
+    <div class="homepage-title">
+        <span>Blog</span>
+    </div>
+
+
+    <div class="blog-container">
+        <div class="blog">
+            <div class="blog-head">
+                <span class="blog-title"><%= blog.title %></span>
+                <span class="blog-author"><%= blog.name %></span>
+            </div>
+            <div class="blog-content">
+                <p><%= blog.description %></p>
+            </div>
+            <div class="delete-blog">
+                <a class="delete-btn" data-doc="<%= blog._id %>">Delete Blog</a>
+            </div>
+        </div>
+    </div> 
+    <script>
+        const delBtn = document.querySelector('a.delete-btn');
+
+        delBtn.addEventListener("click", (e) =>{
+            
+            const endpoint = `/blogs/${delBtn.dataset.doc}`;
+            
+            fetch(endpoint, {
+                method: 'DELETE'
+            })
+            .then( (res) =>{res.json()})
+            .then( (data) =>{ window.location.href = '/blogs' })
+            .catch( err => {console.log(err)});
+        })
+    </script>        
+</body>
+</html>

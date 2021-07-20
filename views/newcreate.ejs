@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./templates/head.ejs") %>
+    <link rel="stylesheet" href="/form_style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h2><a href="/">Blogify</a></h2>
+            <div class="auth_options">
+                <span class="login_link"><a href="/auth/login">Login</a></span>
+                <span style="font-weight: bolder;"> | </span>
+                <span class="signup_link"><a href="/auth/signup">SignUp</a></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="form_container">
+        <div class="form_wrapper">
+            <h2>Create Post</h2>
+            <form action="/blogs" method="POST">
+                <!-- Name -->
+                <div class="txt_field">
+                    <input type="text" name="name" autocomplete="off" required>
+                    <label for="name" class="label-name">
+                        <span class="content-name">Name</span>
+                    </label>
+                </div>
+                <br>    
+                <!-- Title -->
+                <div class="txt_field">
+                    <input type="text" name="title" autocomplete="off" required>
+                    <label for="title" class="label-name">
+                        <span class="content-name">Title</span>
+                    </label>
+                </div>
+                <br> 
+                <!-- Post Description-->
+                <div class="txtarea_field">
+                    <label for="description" class="txtarea_label">
+                        <span class="txtarea-content">Blog Description</span> 
+                    </label><br>
+                    <textarea type="text" name="description" autocomplete="off" required></textarea>
+                </div>
+                <br>
+                <button type="submit" class="submit_btn">POST</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

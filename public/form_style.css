@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: #F4F4F2;
+    list-style: none;
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Navigation bar */
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+header h2{
+    margin: 15px 0px 10px 10px;
+    font-size: 30px;
+}
+
+header h2 a{
+    color: #495464;
+}
+
+header .auth_options{
+    margin: 15px 10px 10px 0px;
+    color: #495464;
+    font-size: 20px;
+}
+
+.signup_link a, .login_link a{
+    color: #495464;
+    font-weight: bold;
+}
+
+.signup_link a:hover, 
+.login_link a:hover,
+header h2 a:hover
+{
+    color: #39A2DB;
+}
+
+/*Styling the form */
+.form_container{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_wrapper{
+    height: 45vh;
+    width: 350px;
+    padding: 0px 40px;
+    background-color: #F4F4F2;
+    /* text-align: center;     */
+    /* background-color: #E8F0F2; */
+}
+
+.form_wrapper h2{
+    font-size: 30px;
+    margin: 10px 0px;
+    color: #495464;    
+}
+
+
+/* Styling the individual field */
+.txt_field{
+    position: relative;
+    height:50px;
+    overflow: hidden;    
+}
+
+.txt_field input{
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    padding-top: 10px;
+    background-color: #F4F4F2;
+    border: none;
+    outline: none;
+    color: #495464;
+}
+
+.txt_field label{
+    position: absolute;
+    bottom: 0%;
+    left:0%;
+    width: 100%;
+    height:100%;
+    pointer-events: none;
+    border-bottom: 2px solid #BBBFCA;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #BBBFCA;
+    
+}
+
+.txt_field label::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left:0;
+    bottom: -1;
+    border-bottom: 2px solid #39A2DB;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.content-name{
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.5s ease;
+}
+
+.error{
+    color: #ff0039;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.txt_field input:focus + .label-name .content-name,
+.txt_field input:valid + .label-name .content-name
+{
+    transform: translateY(-125%);
+    font-size: 14px;
+    color: #39A2DB;
+}
+
+.txt_field input:focus + .label-name::after,
+.txt_field input:valid + .label-name::after
+{
+    transform: translateX(0%);
+}
+
+.submit_btn{
+
+    height: 40px;
+    width: 100%;
+    border: none;
+    font-size: 18px;
+    font-weight:bold;
+    font-family:'Open Sans', sans-serif;
+    color: white;
+    background-color: #4CAF50;
+    margin-top: 10px;    
+    cursor:pointer;
+}
+
+/* Extra for create post */
+textarea{
+    outline: none;
+    resize:none;
+    width: 100%;
+    height: 200px;
+    background-color: #F4F4F2;
+    font-size: 18px;
+    color: #495464;
+    border: 2px solid #BBBFCA;
+}
+
+.txtarea_field label{
+    font-weight: bold;
+    color: #BBBFCA;
+    text-transform: uppercase;
+}
+
+.txtarea_field textarea:focus{
+    border: 2px solid #39A2DB;
+}

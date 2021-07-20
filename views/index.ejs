@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./templates/head.ejs") %>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%- include("./templates/navbar.ejs") %>
+    <h2 class="content-title">ALL BLOGS</h2>
+    <div class="all-blogs create-content">
+        <% if(blogs.length > 0) { %>
+            <% blogs.forEach( blog => { %>
+                <div class="blog-detail">
+                    <h3 class="blog-title"><%= blog.title %></h3>
+                    <a class="view-btn" href="/blogs/<%= blog._id %>">View</a>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <h3>No data available...</h3>
+        <% } %> 
+    </div>
+    <%- include("./templates/footer.ejs") %>
+</body>
+</html>
