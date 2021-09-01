@@ -38,7 +38,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 //routes
-// app.get('*',isUser);
+app.get('*',isUser);
 app.get('/',(req,res) => {
     res.redirect('/blogs');
 });
@@ -46,7 +46,6 @@ app.get('/',(req,res) => {
 //blog routes
 app.use('/blogs',blogRoutes);
 app.use('/auth',authRoutes);
-
 
 app.get('/about',(req,res) => {
     res.render("newabout" , { title: "About Us"});

@@ -7,19 +7,21 @@
     <header>
         <nav>
             <h2><a href="/">Blogify</a></h2>
-            <!-- <div class="auth_options">
-                <span class="login_link"><a href="#">Login</a></span>
-                <span style="font-weight: bolder;"> | </span>
-                <span class="signup_link"><a href="#">SignUp</a></span>
-            </div> -->
-            <div class="user_data">
-                <span class="user_greet">Welcome tejas_8501</span>
-                <span style="font-weight: bolder;"> | </span>
-                <span class="logout_link"><a href="#">Logout</a></span>
-            </div>
+            <% if(user) { %>
+                <div class="user_data">
+                    <span class="user_greet">Welcome <%= user.username %>! </span>
+                    <span style="font-weight: bolder;"> | </span>
+                    <span class="logout_link"><a href="/auth/logout">Logout</a></span>
+                </div>
+            <% } else{ %>
+                <div class="auth_options">
+                    <span class="login_link"><a href="/auth/login">Login</a></span>
+                    <span style="font-weight: bolder;"> | </span>
+                    <span class="signup_link"><a href="/auth/signup">SignUp</a></span>
+                </div>
+            <% } %>   
         </nav>
     </header>
-
     <div class="subnav_container">
         <nav class="sub_nav">
             <span class="subnav_label">
