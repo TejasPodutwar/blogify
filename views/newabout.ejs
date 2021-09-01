@@ -1,19 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
         <%- include("./templates/head.ejs") %>
-        <link rel="stylesheet" href="/about.css">
+        <link rel="stylesheet" href="/style.css">
     </head>
 <body>
     <header>
         <nav>
             <h2><a href="/">Blogify</a></h2>
-            <div class="auth_options">
-                <span class="login_link"><a href="/auth/login">Login</a></span>
-                <span style="font-weight: bolder;"> | </span>
-                <span class="signup_link"><a href="/auth/signup">SignUp</a></span>
-            </div>
+            <% if(user) { %>
+                <div class="user_data">
+                    <span class="user_greet">Welcome <%= user.username %>! </span>
+                    <span style="font-weight: bolder;"> | </span>
+                    <span class="logout_link"><a href="/auth/logout">Logout</a></span>
+                </div>
+            <% } else{ %>
+                <div class="auth_options">
+                    <span class="login_link"><a href="/auth/login">Login</a></span>
+                    <span style="font-weight: bolder;"> | </span>
+                    <span class="signup_link"><a href="/auth/signup">SignUp</a></span>
+                </div>
+            <% } %>   
         </nav>
-    </header>  
+    </header>
+    <div class="subnav_container">
+        <nav class="sub_nav">
+            <span class="subnav_label">
+                <a class="subnav_link" href="/">Home</a>
+            </span>
+            <span class="subnav_label">
+                <a class="subnav_link"href="/about">About Us</a>
+            </span>
+            <span class="subnav_label">
+                <a class="subnav_link"href="/blogs/create">Create Post</a>
+            </span>
+        </nav>
+    </div>  
     <div class="content">
         <h2 class="content-title" style="font-size: 40px;">About Us</h2>
         <blockquote>

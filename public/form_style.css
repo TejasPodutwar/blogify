@@ -4,7 +4,6 @@ body{
     margin: 0px;
     background-color: #F4F4F2;
     list-style: none;
-    overflow: hidden;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -12,7 +11,8 @@ a{
     text-decoration: none;
 }
 
-/* Navigation bar */
+
+/* Title bar */
 header nav{
     display: flex;
     justify-content: space-between;
@@ -28,22 +28,73 @@ header h2 a{
     color: #495464;
 }
 
-header .auth_options{
+header .auth_options, .user_data{
     margin: 15px 10px 10px 0px;
     color: #495464;
     font-size: 20px;
 }
 
-.signup_link a, .login_link a{
+.signup_link a, .login_link a, .logout_link a{
     color: #495464;
     font-weight: bold;
 }
 
+/* Extra: .user_greet */
+.user_greet{
+    font-weight: bolder;
+}
+
+/* Extra: .logout_link a:hover */
 .signup_link a:hover, 
 .login_link a:hover,
+.logout_link a:hover,  
 header h2 a:hover
 {
     color: #39A2DB;
+}
+
+/* Repeating code end */
+
+
+/* Navigation bar */
+.subnav_container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sub_nav{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.subnav_label{
+    padding: 5px 10px;
+    font-size: 20px;
+    
+}
+
+.subnav_label a{
+    color: #CDD0CB ;
+    font-weight:normal;
+}
+
+/* Home Page title */
+
+.homepage-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 20px 0px;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: #39A2DB;
+}
+
+.subnav_label a:hover{
+    color:#39A2DB;
 }
 
 /*Styling the form */
