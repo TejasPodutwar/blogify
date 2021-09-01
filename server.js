@@ -15,8 +15,7 @@ dotenv.config({path: 'config.env'});
 const PORT = process.env.PORT || 7000;
 
 //connecting to the database
-const DB_URL = 'mongodb://localhost:27017/blogsBackend';
-mongoose.connect(DB_URL,{useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.DB_URL,{useNewUrlParser: true, useUnifiedTopology: true})
 .then((result) =>{
     console.log("Connection to the database successful...");
 })
